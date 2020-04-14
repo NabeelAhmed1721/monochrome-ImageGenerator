@@ -7,7 +7,10 @@ generateMono(IMAGE_LENGTH_IN_PIXELS, OUTPUT_LOCATION)
 -> OUTPUT:
         ◻◻
         ◻◻
+
+        ANYTHING OVER 4 length needs 4 GB of RAM to compute!
+        use: node --max-old-space-size=4096 app.js to use more RAM
 */
 
 
-generateMono(4, __dirname)
+generateMono(2, __dirname+"/monochrome/")
