@@ -1,4 +1,7 @@
 function generateBinary(arrSize) {
+    if(arrSize % 2 != 0) {
+        throw Error("Array size must be even!")
+    }
     var outputArray = []
     var possible = Math.pow(2, arrSize) // Possible number of binary combinations
     for(let x = 0; x < possible; x++) {
@@ -7,5 +10,5 @@ function generateBinary(arrSize) {
     return outputArray
 }
 
-let out = generateBinary(5)
+let out = generateBinary(6)
 console.log(out, "\nMax length:", out.length)
