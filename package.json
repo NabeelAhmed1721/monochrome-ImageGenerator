@@ -4,6 +4,7 @@
   "description": "generates all possible binary square images with given length (n)",
   "main": "app.js",
   "dependencies": {
+    "merge-img": "^2.1.3",
     "pngjs-image": "^0.11.7"
   },
   "devDependencies": {},
