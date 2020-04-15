@@ -5,7 +5,7 @@ const generateBin = require('./src/generateBin')
 
 var fs = require('fs');
 
-const writeStream = fs.createWriteStream('array.txt');
+const writeStream = fs.createWriteStream('binaryCombinations.txt');
 
 const pathName = writeStream.path;
 
