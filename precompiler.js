@@ -1,3 +1,6 @@
+// I suggest you have 8gb of RAM ready to do this
+// Run this to allocate 8gb of RAM -> node --max-old-space-size=8192 app.js
+
 const generateBin = require('./src/generateBin')
 
 var fs = require('fs');
