@@ -13,4 +13,4 @@ generateMono(IMAGE_LENGTH_IN_PIXELS, OUTPUT_LOCATION)
 */
 
 
-generateMono(3, __dirname+"/monochrome/")
+generateMono(4, __dirname+"/monochrome/")

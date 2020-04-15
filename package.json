@@ -1,0 +1,23 @@
+{
+  "name": "monochrome-imagegenerator",
+  "version": "1.0.0",
+  "description": "generates all possible binary square images with given length (n)",
+  "main": "app.js",
+  "dependencies": {
+    "pngjs-image": "^0.11.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NabeelAhmed1721/monochrome-ImageGenerator.git"
+  },
+  "author": "Nabeel Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NabeelAhmed1721/monochrome-ImageGenerator/issues"
+  },
+  "homepage": "https://github.com/NabeelAhmed1721/monochrome-ImageGenerator#readme"
+}
