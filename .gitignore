@@ -1,6 +1,9 @@
 # Mac filesystem
 .DS_Store
 
+# Random Crap
+monochrome
+
 # Logs
 logs
 *.log
