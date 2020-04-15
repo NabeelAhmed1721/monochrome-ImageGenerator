@@ -12,5 +12,4 @@ generateMono(IMAGE_LENGTH_IN_PIXELS, OUTPUT_LOCATION)
         use: node --max-old-space-size=4096 app.js to use more RAM
 */
 
-
-generateMono(4, __dirname+"/monochrome/")
+generateMono(3, __dirname+"/monochrome/")
