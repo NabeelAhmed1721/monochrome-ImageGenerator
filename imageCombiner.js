@@ -1,13 +1,24 @@
 const mergeImg = require("merge-img")
 
+/*
 
-// var startingImage = 0;
+Change starting image
+Folder ID 
+Cycle X
 
-// for(let x=0; x<4; x++) { // Cycle X
+*/
+
+
+// var FOLDER_ID = 15 // Change to folder
+// var startingImage = 4096 * FOLDER_ID;
+
+// var offset = 256
+
+// for(let x=(FOLDER_ID*16); x<(FOLDER_ID*16)+16; x++) { // Cycle X
 
 //     var imageArray = []
-//     for(let i=startingImage; i<startingImage+4; i++) {  // we want the image to be 16x32
-//         var file = `./monochrome/0/${i}.png`
+//     for(let i=startingImage; i<startingImage+offset; i++) {  // we want the image to be 16x32
+//         var file = `./monochrome/${FOLDER_ID}/${i}.png`
 //         imageArray.push(file)
 //     }
 
@@ -15,11 +26,11 @@ const mergeImg = require("merge-img")
 //         img.write(`combined/out${x}.png`, ()=>console.log("Done!"))
 //     })
 
-//     startingImage+=4
+//     startingImage+=offset
 // }
 
 var imageArray = []
-for(let x=0; x<4; x++) {
+for(let x=0; x<256; x++) {
     let file = `./combined/out${x}.png`
     imageArray.push(file)
 }
