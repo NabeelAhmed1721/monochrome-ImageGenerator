@@ -9,14 +9,15 @@ module.exports = function generateMono(length, output_file_location, callback=()
     var combinations = generateBin(areaPixelAmount)
     
     // Folder handling ~ Some OS's can't handle too many files ;)
+    reserveData = JSON.parse(fs.readFileSync("reserve.json", 'utf8'))
+
     var IMAGE_COUNT = 0
-    var FOLDER = 0
-    fs.mkdirSync(output_file_location+`/${FOLDER}/`) // Make initial 0 directory
+    var FOLDER = reserveData.Folder
+    fs.mkdirSync(output_file_location+`/${FOLDER}/`) // Make initial directory
 
     // Go through every combination
     var possibleBinaryComb = Math.pow(2, areaPixelAmount)
-    for(let combNumber=0; combNumber<possibleBinaryComb; combNumber++) {
-        
+    for(let combNumber=reserveData.CombNumber; combNumber<possibleBinaryComb; combNumber++) {
         // Create square image
         var image = PNGImage.createImage(length, length)
         var Y_LOCATION = 0
@@ -48,16 +49,19 @@ module.exports = function generateMono(length, output_file_location, callback=()
             }
         }
 
-        if(IMAGE_COUNT >= 4096) { // 4096 -> 65536 / 4096 = 16 folders | 4096 files per folder seems reasonable. CHANGE as needed.
+        if(IMAGE_COUNT != 0 && IMAGE_COUNT % 4096 == 0) { // 4096 -> 65536 / 4096 = 16 folders | 4096 files per folder seems reasonable. CHANGE as needed.
             IMAGE_COUNT = 0
             FOLDER++
-            fs.mkdirSync(output_file_location+`/${FOLDER}/`)
+            //fs.mkdirSync(output_file_location+`/${FOLDER}/`)
+            fs.writeFile("reserve.json", JSON.stringify({Folder: FOLDER, CombNumber: combNumber}), ()=>{
+                console.log("FOLDER #", FOLDER, "COMBINATION #", combNumber);
+            })
+            break;
         }
 
         image.writeImage(output_file_location+`/${FOLDER}/${combNumber}.png`, function (err) {
             if (err) throw err;
         });
-
         IMAGE_COUNT++
     }
     callback()   
